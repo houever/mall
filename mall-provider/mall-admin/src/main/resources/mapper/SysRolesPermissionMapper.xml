@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mall.admin.mapper.ISysRolesPermissionMapper">
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.mall.admin.entity.SysRolesPermission">
+        <result column="id" property="id"/>
+        <result column="create_by" property="createBy"/>
+        <result column="create_time" property="createTime"/>
+        <result column="is_del" property="isDel"/>
+        <result column="update_by" property="updateBy"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="rid" property="rid"/>
+        <result column="pid" property="pid"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+                            id,
+                            create_by,
+                            create_time,
+                            is_del,
+                            update_by,
+                            update_time,
+                        rid, pid
+        </sql>
+
+    <select id="getAll" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM sys_roles_permission
+    </select>
+    <delete id="deleteRolesPermByRid" parameterType="java.lang.String">
+        DELETE FROM sys_roles_permission WHERE rid=#{id}
+    </delete>
+</mapper>
