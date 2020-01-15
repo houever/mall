@@ -5,6 +5,7 @@ import cn.fast.web.common.result.Result;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
+import ${parent}.repository.${entity}Repository;
 import ${package.Entity}.${entity};
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
@@ -29,7 +30,7 @@ import ${superControllerClassPackage};
  * @since ${date}
  */
 @Slf4j
-@Api(tags={"$!{table.comment} 前端控制器"})
+@Api(tags = {"$!{table.comment} 前端控制器"})
 #if(${restControllerStyle})
 @RestController
 #else
@@ -38,12 +39,13 @@ import ${superControllerClassPackage};
 @RequestMapping("#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end")
 @AllArgsConstructor
 #if(${superControllerClass})
-public class ${table.controllerName} extends ${superControllerClass}<${table.serviceName},${entity},String> {
+public class ${table.controllerName} extends ${superControllerClass}<${table.serviceName},${entity}, String> {
 #else
 public class ${table.controllerName} {
 #end
 
 private final ${table.serviceName} ${entity}Service;
+private ${entity}Repository ${entity}Repository;
 
 /**
   * 根据id查询
@@ -85,6 +87,6 @@ public Result save(@RequestBody ${entity} entity){
 @ApiOperation(value = "更新数据")
 public Result modify(@RequestBody ${entity} entity){
         return Result.success(${entity}Service.updateById(entity));
-    }
+        }
 
 }
