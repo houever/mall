@@ -19,5 +19,11 @@ public class PmsAttrServiceImpl extends BaseServiceImpl<IPmsAttrMapper,PmsAttr> 
 
     @Resource
     private IPmsAttrMapper PmsAttrMapper;
+    @Resource
+    private PmsAttrRepository pmsAttrRepository;
 
+    @Override
+    public PmsAttr selectById(String id) {
+        return pmsAttrRepository.findById(id).get();
+    }
 }

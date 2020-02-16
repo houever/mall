@@ -11,4 +11,5 @@ import com.mall.pms.entity.PmsAttr;
  */
 public interface IPmsAttrService extends BaseService<PmsAttr>{
 
+    PmsAttr selectById(String id);
 }
