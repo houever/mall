@@ -21,6 +21,7 @@
     <modules>
         <module>mall-admin</module>
         <module>mall-oms</module>
+        <module>mall-oss</module>
         <module>mall-pms</module>
         <module>mall-sms</module>
         <module>mall-ums</module>

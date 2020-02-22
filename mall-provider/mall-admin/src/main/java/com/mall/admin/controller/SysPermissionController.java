@@ -63,8 +63,8 @@ public class SysPermissionController extends BaseController<ISysPermissionServic
         }
     }
 
-    @DeleteMapping(value = "/del/{id}")
-    public Result updateMenu(@PathVariable(name = "id") String id) {
+    @DeleteMapping(value = "/delete/{id}")
+    public Result delById(@PathVariable(name = "id") String id) {
         return Result.success(sysPermissionService.removeById(id));
     }
 

@@ -1,9 +1,11 @@
 package com.mall.auth.controller;
 
+import cn.fast.web.common.model.AuthAccount;
 import cn.fast.web.common.result.Result;
-import cn.fast.web.common.result.ResultEnum;
+import cn.fast.web.common.utils.GsonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.jwt.JwtHelper;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,17 +34,16 @@ public class UserController {
     public Principal user(Principal user) {
         return user;
     }
+
     @RequestMapping("/oauth/remove_token")
     public Result removeToken(@RequestParam("token") String token) {
-
-        if (token != null) {
-            OAuth2AccessToken accessToken = tokenStore.readAccessToken(token);
+        OAuth2AccessToken accessToken = tokenStore.readAccessToken(token);
+        if (null != accessToken) {
+            String claims = JwtHelper.decode(token).getClaims();
+            AuthAccount authAccount = GsonUtil.gsonToBean(claims, AuthAccount.class);
+            log.info("authAccount:{}", authAccount);
             tokenStore.removeAccessToken(accessToken);
-        } else {
-            return Result.fail(ResultEnum.TOKEN_MISS);
         }
-
         return Result.success();
     }
-
 }

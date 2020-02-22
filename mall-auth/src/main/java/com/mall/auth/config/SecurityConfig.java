@@ -42,6 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/oauth/remove_token","/actuator/*").permitAll()
                 .anyRequest().authenticated();
+        http.sessionManagement().maximumSessions(1);
     }
 
     @Override
