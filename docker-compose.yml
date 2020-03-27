@@ -1,0 +1,48 @@
+version: "3"
+services:
+  mall-auth:
+    hostname: mall-auth
+    container_name: mall-auth
+    restart: always
+    image: 10.1.79.22/mycloud/mall-auth:0.1
+    ports:
+      - "8000:8000"
+    environment:
+      - 'APP_NAME=mall-auth'
+      - 'LOCAL=10.1.79.82'
+      - 'CONSUL_HOST=10.1.70.95'
+    networks:
+      - mall_net
+  mall-admin:
+    container_name: mall-admin
+    restart: always
+    image: 10.1.79.22/mycloud/mall-admin:0.1
+    ports:
+      - "9001:9001"
+    environment:
+      - 'APP_NAME=mall-admin'
+      - 'LOCAL=10.1.79.82'
+      - 'CONSUL_HOST=10.1.70.95'
+    networks:
+      - mall_net
+    depends_on:
+      - mall-auth
+  mall-gateway:
+    container_name: mall-gateway
+    restart: always
+    image: 10.1.79.22/mall/mall-gateway:0.1
+    ports:
+      - "8443:8443"
+    environment:
+      - 'APP_NAME=mall-gateway'
+      - 'LOCAL=10.1.79.82'
+      - 'CONSUL_HOST=10.1.70.95'
+      - 'OAUTH_IP=10.1.79.82'
+    networks:
+      - mall_net
+    depends_on:
+      - mall-auth
+      - mall-admin
+networks:
+  mycloud:
+    driver: bridge
