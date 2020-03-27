@@ -119,12 +119,6 @@
                 <version>${docker-maven.plugin.version}</version>
                 <executions>
                     <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>build</goal>
-                        </goals>
-                    </execution>
-                    <execution>
                         <id>push-image</id>
                         <phase>deploy</phase>
                         <goals>
