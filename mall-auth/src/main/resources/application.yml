@@ -2,7 +2,7 @@ spring:
   main:
     allow-bean-definition-overriding: true
   redis:
-    host: ${REDIS_HOST:10.1.70.78}
+    host: ${REDIS_HOST:10.1.70.81}
     port: 6379
     password:
   cache:
@@ -10,14 +10,14 @@ spring:
       time-to-live: 1d
       use-key-prefix: true
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST:10.1.70.78}:3306/mall-auth?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF8&autoReconnect=true&useSSL=false
+    url: jdbc:mysql://${MYSQL_HOST:10.1.70.81}:3306/mall-auth?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF8&autoReconnect=true&useSSL=false
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
   boot:
     admin:
       client:
-        url: http://${ADMIN_HOST:10.1.70.78}:8084    #server端地址
+        url: http://${ADMIN_HOST:10.1.70.81}:8084    #server端地址
         username: admin    #对应server端的账号密码，不配置就监控不到这个client。
         password: 123456
         instance:
@@ -25,7 +25,7 @@ spring:
   cloud:
     consul:
       enabled: true
-      host: ${CONSUL_HOST:10.1.70.78}
+      host: ${CONSUL_HOST:10.1.70.81}
       port: 8500
       discovery:
         service-name: ${spring.application.name} #设置 注册到 consul 的服务名称
@@ -36,7 +36,7 @@ spring:
         health-check-path: /actuator/health #定义 consul 健康检查路径
         health-check-timeout: 10s #健康检查超时时间
         prefer-ip-address: true
-        ip-address: ${LOCAL:10.1.70.74}
+        ip-address: ${LOCAL:10.1.70.38}
 feign:
   hystrix:
     enabled: true
@@ -73,6 +73,6 @@ management:
         auto-time-requests: false
 logging:
   level:
-    com.mycloud.admin: debug
-    #    org.springframework.security: debug
-    org.springframework.web: debug
+    com.mall.auth: debug
+    org.springframework.security: info
+    org.springframework.web: info

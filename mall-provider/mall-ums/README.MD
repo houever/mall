@@ -9,6 +9,6 @@ packageName=com.mall.ums
 
 #数据库配置
 driverName=com.mysql.cj.jdbc.Driver
-url=jdbc:mysql://10.1.70.78:3306/guli_ums?useUnicode=true&characterEncoding=UTF-8&tinyInt1isBit=true
+url=jdbc:mysql://10.1.70.81:3306/guli_ums?useUnicode=true&characterEncoding=UTF-8&tinyInt1isBit=true
 username=root
 password=123456

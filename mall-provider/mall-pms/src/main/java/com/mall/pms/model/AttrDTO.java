@@ -1,7 +1,4 @@
-package com.mall.pms.model;/**
- * @author houqj
- * @date 2020-02-16 16:43
- */
+package com.mall.pms.model;
 
 import lombok.Data;
 

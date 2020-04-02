@@ -1,9 +1,9 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 10.1.70.78
+Source Server         : 10.1.70.81
 Source Server Version : 50722
-Source Host           : 10.1.70.78:3306
+Source Host           : 10.1.70.81:3306
 Source Database       : mycloud-admin
 
 Target Server Type    : MYSQL
