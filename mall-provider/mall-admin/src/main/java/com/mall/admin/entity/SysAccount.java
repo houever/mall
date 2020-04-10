@@ -1,15 +1,7 @@
 package com.mall.admin.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.extension.activerecord.Model;
-import com.baomidou.mybatisplus.annotation.TableField;
-
-import java.io.Serializable;
-import java.util.Date;
-
 import cn.fast.web.base.BaseEntity;
+import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -121,6 +113,5 @@ public class SysAccount extends BaseEntity {
      */
     @ApiModelProperty(value = "租户id", example = "租户id")
     private String tenantId;
-
 
 }

@@ -20,6 +20,11 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>com.mall</groupId>
+			<artifactId>mall-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>cn.fast</groupId>
 			<artifactId>spring-boot-starter-fast-web</artifactId>
 			<version>0.0.1.RELEASE</version>

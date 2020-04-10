@@ -3,6 +3,10 @@ package com.mall.pms.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableField;
 
@@ -25,7 +29,7 @@ import javax.persistence.Entity;
  * </p>
  *
  * @author HOU
- * @since 2020-02-17
+ * @since 2020-04-07
  */
 @Data
 @Entity
@@ -89,7 +93,10 @@ public class PmsProduct extends BaseEntity {
      */
     @ApiModelProperty(value = "销量", example = "销量")
     private Integer sale;
-    @ApiModelProperty(value = "", example = "")
+    /**
+     * 商品价格
+     */
+    @ApiModelProperty(value = "商品价格", example = "商品价格")
     private BigDecimal price;
     /**
      * 促销价格
@@ -156,7 +163,10 @@ public class PmsProduct extends BaseEntity {
      */
     @ApiModelProperty(value = "以逗号分割的产品服务：1->无忧退货；2->快速退款；3->免费包邮", example = "以逗号分割的产品服务：1->无忧退货；2->快速退款；3->免费包邮")
     private String serviceIds;
-    @ApiModelProperty(value = "", example = "")
+    /**
+     * 商品关键词
+     */
+    @ApiModelProperty(value = "商品关键词", example = "商品关键词")
     private String keywords;
     @ApiModelProperty(value = "", example = "")
     private String note;
@@ -209,6 +219,5 @@ public class PmsProduct extends BaseEntity {
      */
     @ApiModelProperty(value = "商品分类名称", example = "商品分类名称")
     private String productCategoryName;
-
 
 }

@@ -24,6 +24,7 @@ import com.mall.admin.service.ISysPermissionService;
 import com.mall.admin.service.ISysRolesService;
 import com.mall.admin.utils.BCryptUtil;
 import com.mall.admin.utils.MenuVoTreeUtil;
+import com.mall.admin.utils.WrapperFactory;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;

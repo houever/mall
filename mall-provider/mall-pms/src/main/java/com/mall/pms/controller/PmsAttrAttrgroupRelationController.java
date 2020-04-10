@@ -1,6 +1,7 @@
 package com.mall.pms.controller;
 
 import cn.fast.web.base.BaseController;
+import cn.fast.web.base.WrapperFactory;
 import cn.fast.web.common.result.Result;
 import cn.fast.web.utils.ObjectConvertUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -49,7 +50,8 @@ public class PmsAttrAttrgroupRelationController extends BaseController<IPmsAttrA
     @GetMapping(value = "/attrInfo/{gid}")
     @ApiOperation(value = "通过分组id查询分组关联属性信息")
     public Result attrInfo(@PathVariable(name = "gid") Integer gid) {
-        List<PmsAttrAttrgroupRelation> relations = PmsAttrAttrgroupRelationService.list(queryWrapper().eq("attr_group_id", gid));
+        QueryWrapper<PmsAttrAttrgroupRelation> wrapper = Wrappers.emptyWrapper();
+        List<PmsAttrAttrgroupRelation> relations = PmsAttrAttrgroupRelationService.list(wrapper.eq("attr_group_id", gid));
         List<PmsAttr> list = Lists.newArrayList();
         if (!relations.isEmpty()) {
             List<Long> attrGroupIds = relations.stream().map(a -> a.getAttrId()).collect(Collectors.toList());
@@ -81,7 +83,8 @@ public class PmsAttrAttrgroupRelationController extends BaseController<IPmsAttrA
     @PostMapping(value = "/remove/relation")
     @ApiOperation(value = "删除分组与属性关联关系")
     public Result removeRelation(@RequestBody PmsAttrAttrgroupRelation relation) {
-        boolean remove = PmsAttrAttrgroupRelationService.remove(queryWrapper().eq("attr_id", relation.getAttrId()).eq("attr_group_id", relation.getAttrGroupId()));
+        QueryWrapper<PmsAttrAttrgroupRelation> queryWrapper = Wrappers.emptyWrapper();
+        boolean remove = PmsAttrAttrgroupRelationService.remove(queryWrapper.eq("attr_id", relation.getAttrId()).eq("attr_group_id", relation.getAttrGroupId()));
         QueryWrapper<PmsAttr> wrapper = new QueryWrapper<PmsAttr>();
         remove = PmsAttrService.remove(wrapper.eq("attr_id", relation.getAttrId()));
         return Result.success(remove);

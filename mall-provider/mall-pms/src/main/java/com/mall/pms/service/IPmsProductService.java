@@ -7,7 +7,7 @@ import com.mall.pms.entity.PmsProduct;
  * </p>
  *
  * @author HOU
- * @since 2020-02-17
+ * @since 2020-04-07
  */
 public interface IPmsProductService extends BaseService<PmsProduct>{
 

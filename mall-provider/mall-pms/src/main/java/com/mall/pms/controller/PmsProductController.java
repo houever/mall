@@ -5,7 +5,6 @@ import cn.fast.web.common.result.Result;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.mall.pms.entity.PmsProduct;
-import com.mall.pms.repository.PmsProductRepository;
 import com.mall.pms.service.IPmsProductService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -19,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
  * </p>
  *
  * @author HOU
- * @since 2020-02-17
+ * @since 2020-04-07
  */
 @Slf4j
 @Api(tags = {"商品信息 前端控制器"})
@@ -29,7 +28,7 @@ import org.springframework.web.bind.annotation.*;
 public class PmsProductController extends BaseController<IPmsProductService, PmsProduct, String> {
 
     private final IPmsProductService PmsProductService;
-    private PmsProductRepository PmsProductRepository;
+    private com.mall.pms.repository.PmsProductRepository PmsProductRepository;
 
     /**
      * 根据id查询
