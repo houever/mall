@@ -1,7 +1,6 @@
 package com.mall.pms.controller;
 
 import cn.fast.web.base.BaseController;
-import cn.fast.web.base.WrapperFactory;
 import cn.fast.web.common.result.Result;
 import cn.fast.web.utils.ObjectConvertUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;

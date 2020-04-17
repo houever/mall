@@ -72,12 +72,6 @@
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
         <!--springcloud 依赖结束-->
-        <!--引入logback日志输出配置，这时由于kafka绑定的是日志事件-->
-        <dependency>
-            <groupId>net.logstash.logback</groupId>
-            <artifactId>logstash-logback-encoder</artifactId>
-            <version>4.6</version>
-        </dependency>
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
@@ -87,11 +81,6 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
-        <!-- -引入logback日志输出配置，这时由于kafka绑定的是日志事件-->
-        <!--作者：niemingming-->
-        <!--来源：CSDN-->
-        <!--原文：https://blog.csdn.net/niemingming/article/details/79002846-->
-        <!--版权声明：本文为博主原创文章，转载请附上博文链接！-->
     </dependencies>
 
     <build>

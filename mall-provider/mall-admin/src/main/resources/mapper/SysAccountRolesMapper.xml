@@ -6,7 +6,7 @@
         <result column="id" property="id"/>
         <result column="create_by" property="createBy"/>
         <result column="create_time" property="createTime"/>
-        <result column="is_del" property="isDel"/>
+        <result column="is_del" property="deleted"/>
         <result column="update_by" property="updateBy"/>
         <result column="update_time" property="updateTime"/>
         <result column="aid" property="aid"/>

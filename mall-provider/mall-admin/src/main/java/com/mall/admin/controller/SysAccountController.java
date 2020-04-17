@@ -139,6 +139,7 @@ public class SysAccountController extends BaseController<ISysAccountService, Sys
      */
     @PostMapping(value = "/roles")
     public Result getAuthRolesByRequestUrl(@RequestParam(name = "url") String url) {
+        log.error("这是错误啊啊。。");
         List<String> list = sysAccountService.selectRolesByUrl(url);
         return SUCCESS(list);
     }

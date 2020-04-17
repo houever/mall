@@ -5,11 +5,6 @@ spring:
     host: ${REDIS_HOST:10.1.70.81}
     port: 6379
     password:
-  rabbitmq:
-    host: ${RABBIT_HOST:10.1.70.81}
-    port: 5672
-    username: guest
-    password: guest
   #jwt密码
   security:
     oauth2:

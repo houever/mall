@@ -121,5 +121,6 @@ management:
 logging:
   level:
     com.mall.admin: debug
+    cn.fast.web: debug
     org.springframework.web: info
     io.swagger.models.parameters.AbstractSerializableParameter: error

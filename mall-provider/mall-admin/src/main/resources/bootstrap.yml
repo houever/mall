@@ -3,3 +3,16 @@ server:
 spring:
   application:
     name: mall-admin
+  # 邮件配置
+  mail:
+    to: 168650723@qq.com
+    host: smtp.qq.com
+    port: 465
+    username: 349514537@qq.com
+    password: jelzllokzqqibicc
+    default-encoding: utf-8
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true #一定要开启ssl,不然会503 验证失败的

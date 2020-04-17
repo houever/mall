@@ -8,7 +8,7 @@
                             <result column="update_time" property="updateTime"/>
                             <result column="create_by" property="createBy"/>
                             <result column="update_by" property="updateBy"/>
-                            <result column="is_del" property="isDel"/>
+                            <result column="is_del" property="deleted"/>
                                                             <result column="username" property="username"/>
                                                                 <result column="password" property="password"/>
                                                                 <result column="phone" property="phone"/>

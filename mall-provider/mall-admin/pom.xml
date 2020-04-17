@@ -29,11 +29,6 @@
 			<artifactId>spring-boot-starter-fast-web</artifactId>
 			<version>0.0.1.RELEASE</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
     </dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>
@@ -43,14 +38,6 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<mainClass>com.mall.admin.MallAdminApplication</mainClass>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<configuration>
-					<nonFilteredFileExtensions>cert</nonFilteredFileExtensions>
-					<nonFilteredFileExtensions>jks</nonFilteredFileExtensions>
 				</configuration>
 			</plugin>
 			<!--docker镜像build插件-->
